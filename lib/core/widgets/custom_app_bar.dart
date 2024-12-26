@@ -4,12 +4,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:payment/core/theming/styles.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({required this.title,super.key});
+  const CustomAppBar({this.leading,required this.title,super.key});
   final String title;
+final   Widget? leading;
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: Center(child: SvgPicture.asset('assets/images/arrow.svg',height: 24.h,)),
+      leading:leading?? Center(child: SvgPicture.asset('assets/images/arrow.svg',height: 24.h,)),
       centerTitle: true,
       backgroundColor: Colors.transparent,
       elevation: 0,
