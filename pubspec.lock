@@ -102,6 +102,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_credit_card:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: b06ae41fc2706c8e5eb9fc7d67e23cd934b8baf4
+      resolved-ref: b06ae41fc2706c8e5eb9fc7d67e23cd934b8baf4
+      url: "https://github.com/SimformSolutionsPvtLtd/flutter_credit_card"
+    source: git
+    version: "4.0.1"
   flutter_lints:
     dependency: "direct dev"
     description:

@@ -36,6 +36,10 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.16
+  flutter_credit_card:
+    git:
+      url: https://github.com/SimformSolutionsPvtLtd/flutter_credit_card
+      ref: b06ae41fc2706c8e5eb9fc7d67e23cd934b8baf4
   device_preview: ^1.2.0
 
 dev_dependencies:
