@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:payment/features/thank_you_screen/widgets/custom_check_icon.dart';
+import 'package:payment/features/thank_you_screen/widgets/custom_dash_lined.dart';
+import 'package:payment/features/thank_you_screen/widgets/thank_you_card.dart';
 
 class ThankYouBody extends StatelessWidget {
   const ThankYouBody({super.key});
@@ -9,32 +12,13 @@ class ThankYouBody extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       child: Stack(
         clipBehavior: Clip.none,
-        children: [
-          Container(
-            decoration: ShapeDecoration(
-              color: Color(0xFFD9D9D9),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-          ),
+        children:  [
+         const  ThankYouCard(),
           Positioned(
             bottom: MediaQuery.sizeOf(context).height * .2 + 20,
             left: 20 + 8,
             right: 20 + 8,
-            child: Row(
-              children: List.generate(
-                  30,
-                  (index) => Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 2),
-                          child: Container(
-                            height: 2,
-                            color: Color(0xFFB7B7B7),
-                          ),
-                        ),
-                      )),
-            ),
+            child:const  CustomDashLined(),
           ),
           Positioned(
             left: -20,
@@ -54,22 +38,14 @@ class ThankYouBody extends StatelessWidget {
             top: -50,
             left: 0,
             right: 0,
-            child: CircleAvatar(
-              radius: 50,
-              backgroundColor: Color(0xFFD9D9D9),
-              child: CircleAvatar(
-                radius: 40,
-                backgroundColor: Color(0xFF34A853),
-                child: Icon(
-                  Icons.check,
-                  color: Colors.white,
-                  size: 50,
-                ),
-              ),
-            ),
+            child:const  CustomCheckIcon(),
           ),
         ],
       ),
     );
   }
 }
+
+
+
+

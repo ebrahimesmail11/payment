@@ -41,6 +41,7 @@ dependencies:
       url: https://github.com/SimformSolutionsPvtLtd/flutter_credit_card
       ref: b06ae41fc2706c8e5eb9fc7d67e23cd934b8baf4
   device_preview: ^1.2.0
+  font_awesome_flutter: ^10.8.0
 
 dev_dependencies:
   flutter_test:

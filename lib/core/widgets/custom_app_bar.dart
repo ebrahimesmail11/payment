@@ -4,8 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:payment/core/theming/styles.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({this.leading,required this.title,super.key});
-  final String title;
+  const CustomAppBar({this.leading, this.title,super.key});
+  final String? title;
 final   Widget? leading;
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ final   Widget? leading;
       backgroundColor: Colors.transparent,
       elevation: 0,
       title: Text(
-        title,
+        title??'',
         style: Styles.style25,
       ),
     );
