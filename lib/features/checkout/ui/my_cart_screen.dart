@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:payment/core/helpers/extension.dart';
-import 'package:payment/core/routing/routes.dart';
 import 'package:payment/core/theming/styles.dart';
 import 'package:payment/core/widgets/app_text_button.dart';
 import 'package:payment/core/widgets/custom_app_bar.dart';
 import 'package:payment/features/checkout/ui/widgets/order_info_item.dart';
+import 'package:payment/features/checkout/ui/widgets/payment_method_bottom_sheet.dart';
 import 'package:payment/features/checkout/ui/widgets/total_price.dart';
 
 class MyCartScreen extends StatelessWidget {
@@ -54,13 +53,23 @@ class MyCartScreen extends StatelessWidget {
               buttonText: 'Complete Payment',
               textStyle: Styles.style22,
               onPressed: () {
-                context.pushNamed(Routes.paymentDetails);
+                // context.pushNamed(Routes.paymentDetails);
+                showModalBottomSheet(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+
+                  ),
+                    context: context,
+                    builder: (context) {
+                      return const PaymentMethodsBottomSheet();
+                    });
               },
             ),
-          12.verticalSpace,
+            12.verticalSpace,
           ],
         ),
       ),
     );
   }
 }
+
