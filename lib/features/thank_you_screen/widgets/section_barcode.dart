@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -33,7 +32,7 @@ class SectionBarcode extends StatelessWidget {
               'PAID',
               textAlign: TextAlign.center,
               style: Styles.style24.copyWith(
-                color:  Color(0xFF34A853),
+                color: Color(0xFF34A853),
               ),
             ),
           ),

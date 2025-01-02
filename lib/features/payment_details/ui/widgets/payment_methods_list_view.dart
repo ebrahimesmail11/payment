@@ -12,12 +12,12 @@ class PaymentMethodsListView extends StatefulWidget {
 }
 
 class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
- final  List<String> paymentMethods = const [
+  final List<String> paymentMethods = const [
     'assets/images/credit_card.svg',
     'assets/images/paypal.svg',
     // 'assets/images/apple_pay.svg',
   ];
-  int activeIndex =0;
+  int activeIndex = 0;
 
   @override
   Widget build(BuildContext context) {

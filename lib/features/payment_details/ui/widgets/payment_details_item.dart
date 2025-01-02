@@ -19,11 +19,7 @@ class PaymentDetailsItem extends StatelessWidget {
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
           side: BorderSide(
-            width: 1.50,
-            color: isActive
-                ? Color(0xFF34A853)
-                : Colors.grey
-          ),
+              width: 1.50, color: isActive ? Color(0xFF34A853) : Colors.grey),
           borderRadius: BorderRadius.circular(15),
         ),
         shadows: [

@@ -4,7 +4,7 @@ import 'package:payment/core/routing/route_manger.dart';
 import 'package:payment/core/routing/routes.dart';
 
 class PaymentApp extends StatelessWidget {
-  const PaymentApp({required this.appRoute,super.key});
+  const PaymentApp({required this.appRoute, super.key});
   final RouteManger appRoute;
   // This widget is the root of your application.
   @override

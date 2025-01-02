@@ -17,8 +17,8 @@ class PaymentDetailsScreen extends StatefulWidget {
 }
 
 class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
-   GlobalKey<FormState> formKey = GlobalKey();
-   AutovalidateMode autovalidateMode =AutovalidateMode.disabled;
+  GlobalKey<FormState> formKey = GlobalKey();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,14 +59,12 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
                       buttonText: 'Payment',
                       textStyle: Styles.style22,
                       onPressed: () {
-                        if(formKey.currentState!.validate()){
+                        if (formKey.currentState!.validate()) {
                           formKey.currentState!.save();
-                        }else{
+                        } else {
                           context.pushNamed(Routes.thankYou);
-                          autovalidateMode=AutovalidateMode.always;
-                          setState(() {
-                            
-                          });
+                          autovalidateMode = AutovalidateMode.always;
+                          setState(() {});
                         }
                       },
                     ),

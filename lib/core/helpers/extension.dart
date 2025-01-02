@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 extension Navigation on BuildContext {
   //Colors
- // MyColors get colors => Theme.of(this).extension<MyColors>()!;
+  // MyColors get colors => Theme.of(this).extension<MyColors>()!;
 
   //Images
   //MyAssets get images => Theme.of(this).extension<MyAssets>()!;
@@ -19,11 +19,10 @@ extension Navigation on BuildContext {
     return Navigator.of(this).pushNamed(routeName, arguments: arguments);
   }
 
-
   Future<dynamic> pushNamedAndRemoveUntil(
     String routeName, {
-     Object? arguments,
-     RoutePredicate? predicate,
+    Object? arguments,
+    RoutePredicate? predicate,
   }) {
     return Navigator.of(this)
         .pushNamedAndRemoveUntil(routeName, predicate!, arguments: arguments);
@@ -39,6 +38,7 @@ extension Navigation on BuildContext {
 
   void pop() => Navigator.of(this).pop();
 }
+
 extension StringExtension on String? {
   bool isNullOrEmpty() => this == null || this == '';
 }

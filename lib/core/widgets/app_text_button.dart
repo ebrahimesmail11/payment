@@ -37,7 +37,10 @@ class AppTextButton extends StatelessWidget {
             ),
           ),
           backgroundColor: WidgetStatePropertyAll(
-            backgroundColor ?? Color(0xFF34A853,),
+            backgroundColor ??
+                Color(
+                  0xFF34A853,
+                ),
           ),
           padding: WidgetStateProperty.all<EdgeInsets>(
             EdgeInsets.symmetric(

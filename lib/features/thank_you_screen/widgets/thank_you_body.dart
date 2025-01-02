@@ -12,13 +12,13 @@ class ThankYouBody extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       child: Stack(
         clipBehavior: Clip.none,
-        children:  [
-         const  ThankYouCard(),
+        children: [
+          const ThankYouCard(),
           Positioned(
             bottom: MediaQuery.sizeOf(context).height * .2 + 20,
             left: 20 + 8,
             right: 20 + 8,
-            child:const  CustomDashLined(),
+            child: const CustomDashLined(),
           ),
           Positioned(
             left: -20,
@@ -38,14 +38,10 @@ class ThankYouBody extends StatelessWidget {
             top: -50,
             left: 0,
             right: 0,
-            child:const  CustomCheckIcon(),
+            child: const CustomCheckIcon(),
           ),
         ],
       ),
     );
   }
 }
-
-
-
-

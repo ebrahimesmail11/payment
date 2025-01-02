@@ -55,10 +55,9 @@ class MyCartScreen extends StatelessWidget {
               onPressed: () {
                 // context.pushNamed(Routes.paymentDetails);
                 showModalBottomSheet(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-
-                  ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                     context: context,
                     builder: (context) {
                       return const PaymentMethodsBottomSheet();
@@ -72,4 +71,3 @@ class MyCartScreen extends StatelessWidget {
     );
   }
 }
-

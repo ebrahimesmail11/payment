@@ -12,11 +12,11 @@ class RouteManger {
         return MaterialPageRoute(
           builder: (_) => const MyCartScreen(),
         );
-        case Routes.paymentDetails:
+      case Routes.paymentDetails:
         return MaterialPageRoute(
           builder: (_) => const PaymentDetailsScreen(),
         );
-         case Routes.thankYou:
+      case Routes.thankYou:
         return MaterialPageRoute(
           builder: (_) => const ThankYouScreen(),
         );

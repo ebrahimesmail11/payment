@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:payment/core/theming/styles.dart';
 
 class TotalPrice extends StatelessWidget {
-  const TotalPrice({required this.title,required this.value ,super.key});
-final String title;
-final String value;
+  const TotalPrice({required this.title, required this.value, super.key});
+  final String title;
+  final String value;
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       children: [
         Text(
           title,
@@ -16,7 +16,7 @@ final String value;
         ),
         Spacer(),
         Text(
-           value,
+          value,
           textAlign: TextAlign.center,
           style: Styles.style24,
         ),
