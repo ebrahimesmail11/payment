@@ -20,9 +20,12 @@ class ApiService {
     return PaymentIntentModel.fromJson(response.data);
   }
 
-  Future initPaymentSheet() async {
+  Future initPaymentSheet({required String paymentIntentClientSecret}) async {
     Stripe.instance.initPaymentSheet(
-      paymentSheetParameters:  SetupPaymentSheetParameters(),
+      paymentSheetParameters:  SetupPaymentSheetParameters(
+        paymentIntentClientSecret: paymentIntentClientSecret,
+        merchantDisplayName: 'Ibrahim',
+      ),
     );
   }
 }

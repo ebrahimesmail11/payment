@@ -13,7 +13,7 @@ class SectionBarcode extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Icon(
+      const   Icon(
           FontAwesomeIcons.barcode,
           size: 70,
         ),

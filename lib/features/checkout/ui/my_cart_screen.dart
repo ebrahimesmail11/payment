@@ -22,17 +22,17 @@ class MyCartScreen extends StatelessWidget {
               child: Image.asset('assets/images/basket_image.png'),
             ),
             25.verticalSpace,
-            OrderInfoItem(
+           const OrderInfoItem(
               title: 'Order Subtotal',
               value: '\$42.97',
             ),
             3.verticalSpace,
-            OrderInfoItem(
+           const OrderInfoItem(
               title: 'Discount',
               value: '\$0',
             ),
             3.verticalSpace,
-            OrderInfoItem(
+           const OrderInfoItem(
               title: 'Shipping',
               value: '\$8',
             ),
@@ -44,7 +44,7 @@ class MyCartScreen extends StatelessWidget {
               color: Color(0xFFC6C6C6),
             ),
             15.verticalSpace,
-            TotalPrice(
+           const TotalPrice(
               title: 'Total',
               value: '\$50.97',
             ),

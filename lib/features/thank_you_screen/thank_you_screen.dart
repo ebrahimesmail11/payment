@@ -24,7 +24,7 @@ class ThankYouScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Transform.translate(offset: Offset(0, -30), child: ThankYouBody()),
+      body:  Transform.translate(offset: Offset(0, -30), child:const  ThankYouBody()),
     );
   }
 }

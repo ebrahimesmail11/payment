@@ -26,7 +26,7 @@ class CardInfoWidget extends StatelessWidget {
           23.horizontalSpace,
           Text.rich(
             TextSpan(
-              children: [
+              children:  [
                 TextSpan(
                   text: 'Credit Card ',
                   style: Styles.style18,
