@@ -12,20 +12,32 @@ class ApiService {
     required PaymentIntentInputModel paymentIntentInputModel,
   }) async {
     final token = dotenv.env['TOKEN_SECRET_KEY'];
+    if (token == null) {
+      throw Exception("Token is null");
+    }
     final response = await networkService.post(
       body: paymentIntentInputModel.toJson(),
       url: AppConstant.url,
-      token: token.toString(),
+      token: token,
     );
     return PaymentIntentModel.fromJson(response.data);
   }
 
   Future initPaymentSheet({required String paymentIntentClientSecret}) async {
-    Stripe.instance.initPaymentSheet(
-      paymentSheetParameters:  SetupPaymentSheetParameters(
+   await Stripe.instance.initPaymentSheet(
+      paymentSheetParameters: SetupPaymentSheetParameters(
         paymentIntentClientSecret: paymentIntentClientSecret,
         merchantDisplayName: 'Ibrahim',
       ),
     );
+  }
+
+  Future displayPaymentSheet() async {
+    await Stripe.instance.presentPaymentSheet();
+  }
+  Future makePayment({required PaymentIntentInputModel paymentIntentInputModel})async{
+    var paymentIntentModel=await createPaymentIntent(paymentIntentInputModel:paymentIntentInputModel, );
+    await initPaymentSheet(paymentIntentClientSecret: paymentIntentModel.clientSecret!);
+    await displayPaymentSheet();
   }
 }
