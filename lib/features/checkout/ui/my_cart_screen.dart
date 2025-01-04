@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:payment/core/di/dependency_injection.dart';
 import 'package:payment/core/theming/styles.dart';
 import 'package:payment/core/widgets/app_text_button.dart';
 import 'package:payment/core/widgets/custom_app_bar.dart';
+import 'package:payment/features/checkout/cubit/payment_cubit.dart';
 import 'package:payment/features/checkout/ui/widgets/order_info_item.dart';
 import 'package:payment/features/checkout/ui/widgets/payment_method_bottom_sheet.dart';
 import 'package:payment/features/checkout/ui/widgets/total_price.dart';
@@ -22,17 +25,17 @@ class MyCartScreen extends StatelessWidget {
               child: Image.asset('assets/images/basket_image.png'),
             ),
             25.verticalSpace,
-           const OrderInfoItem(
+            const OrderInfoItem(
               title: 'Order Subtotal',
               value: '\$42.97',
             ),
             3.verticalSpace,
-           const OrderInfoItem(
+            const OrderInfoItem(
               title: 'Discount',
               value: '\$0',
             ),
             3.verticalSpace,
-           const OrderInfoItem(
+            const OrderInfoItem(
               title: 'Shipping',
               value: '\$8',
             ),
@@ -44,7 +47,7 @@ class MyCartScreen extends StatelessWidget {
               color: Color(0xFFC6C6C6),
             ),
             15.verticalSpace,
-           const TotalPrice(
+            const TotalPrice(
               title: 'Total',
               value: '\$50.97',
             ),
@@ -60,7 +63,10 @@ class MyCartScreen extends StatelessWidget {
                     ),
                     context: context,
                     builder: (context) {
-                      return const PaymentMethodsBottomSheet();
+                      return BlocProvider(
+                        create: (context) => getIt<PaymentCubit>(),
+                        child: const PaymentMethodsBottomSheet(),
+                      );
                     });
               },
             ),
