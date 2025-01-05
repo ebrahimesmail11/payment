@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:payment/core/theming/styles.dart';
-import 'package:payment/core/widgets/app_text_button.dart';
+import 'package:payment/features/checkout/ui/widgets/custom_button_bloc_consumer.dart';
 import 'package:payment/features/payment_details/ui/widgets/payment_methods_list_view.dart';
 
 class PaymentMethodsBottomSheet extends StatelessWidget {
@@ -17,13 +16,10 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
           16.verticalSpace,
          const PaymentMethodsListView(),
           32.verticalSpace,
-          AppTextButton(
-            buttonText: 'Continue',
-            textStyle: Styles.style22,
-            onPressed: () {},
-          ),
+          CustomButtonBlocConsumer(),
         ],
       ),
     );
   }
 }
+

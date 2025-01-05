@@ -13,7 +13,12 @@ void main() async {
   await ScreenUtil.ensureScreenSize();
   await Env.instance.init();
   await setUpGetIt();
-  Stripe.publishableKey = dotenv.env['Publishable_Key'] ?? '';
+  final publishableKey = dotenv.env['Publishable_Key'];
+  if (publishableKey == null || publishableKey.isEmpty) {
+    throw Exception('Publishable Key is not set. Please check your .env file.');
+  }
+
+  Stripe.publishableKey = publishableKey;
   runApp(DevicePreview(
       enabled: false,
       builder: (context) {

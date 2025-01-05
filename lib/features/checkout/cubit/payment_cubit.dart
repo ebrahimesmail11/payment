@@ -23,7 +23,7 @@ class PaymentCubit extends Cubit<PaymentState> {
     }, failure: (error) {
       emit(
         PaymentState.failure(
-          error: error.apiErrorModel.errMessage ?? '',
+          error: error.apiErrorModel.error?.message ?? '',
         ),
       );
     });

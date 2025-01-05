@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:payment/core/helpers/app_constant.dart';
@@ -18,9 +21,13 @@ class ApiService {
     final response = await networkService.post(
       body: paymentIntentInputModel.toJson(),
       url: AppConstant.url,
+      contentType: Headers.formUrlEncodedContentType,
       token: token,
     );
-    return PaymentIntentModel.fromJson(response.data);
+    log('response:::::::::$response');
+    var intent= PaymentIntentModel.fromJson(response.data);
+    log('intet::::::::::::::$intent');
+    return intent;
   }
 
   Future initPaymentSheet({required String paymentIntentClientSecret}) async {

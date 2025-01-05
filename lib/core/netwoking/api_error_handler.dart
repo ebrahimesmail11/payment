@@ -62,64 +62,91 @@ class ResponseMessage {
   static String NO_INTERNET_CONNECTION = ApiErrors.noInternetError;
   static String DEFAULT = ApiErrors.defaultError;
 }
-
 extension DataSourceExtension on DataSource {
   ApiErrorModel getFailure() {
     switch (this) {
       case DataSource.NO_CONTENT:
         return ApiErrorModel(
-          errMessage: ResponseMessage.NO_CONTENT,
+          error: Error(
+            message: ResponseMessage.NO_CONTENT,
+          ),
         );
       case DataSource.BAD_REQUEST:
         return ApiErrorModel(
-          
-            errMessage: ResponseMessage.BAD_REQUEST);
+          error: Error(
+            message: ResponseMessage.BAD_REQUEST,
+          ),
+        );
       case DataSource.FORBIDDEN:
         return ApiErrorModel(
-           
-            errMessage: ResponseMessage.FORBIDDEN);
+          error: Error(
+            message: ResponseMessage.FORBIDDEN,
+          ),
+        );
       case DataSource.UNAUTORISED:
         return ApiErrorModel(
-           
-            errMessage: ResponseMessage.UNAUTORISED);
+          error: Error(
+            message: ResponseMessage.UNAUTORISED,
+          ),
+        );
       case DataSource.NOT_FOUND:
         return ApiErrorModel(
- 
-            errMessage: ResponseMessage.NOT_FOUND);
+          error: Error(
+            message: ResponseMessage.NOT_FOUND,
+          ),
+        );
       case DataSource.INTERNAL_SERVER_ERROR:
         return ApiErrorModel(
-         
-            errMessage: ResponseMessage.INTERNAL_SERVER_ERROR);
+          error: Error(
+            message: ResponseMessage.INTERNAL_SERVER_ERROR,
+          ),
+        );
       case DataSource.CONNECT_TIMEOUT:
         return ApiErrorModel(
-          
-            errMessage: ResponseMessage.CONNECT_TIMEOUT);
+          error: Error(
+            message: ResponseMessage.CONNECT_TIMEOUT,
+          ),
+        );
       case DataSource.CANCEL:
         return ApiErrorModel(
-           
-            errMessage: ResponseMessage.CANCEL);
+          error: Error(
+            message: ResponseMessage.CANCEL,
+          ),
+        );
       case DataSource.RECIEVE_TIMEOUT:
         return ApiErrorModel(
-  
-            errMessage: ResponseMessage.RECIEVE_TIMEOUT);
+          error: Error(
+            message: ResponseMessage.RECIEVE_TIMEOUT,
+          ),
+        );
       case DataSource.SEND_TIMEOUT:
         return ApiErrorModel(
-           
-            errMessage: ResponseMessage.SEND_TIMEOUT);
+          error: Error(
+            message: ResponseMessage.SEND_TIMEOUT,
+          ),
+        );
       case DataSource.CACHE_ERROR:
-        return ApiErrorModel(errMessage: ResponseMessage.CACHE_ERROR);
+        return ApiErrorModel(
+          error: Error(
+            message: ResponseMessage.CACHE_ERROR,
+          ),
+        );
       case DataSource.NO_INTERNET_CONNECTION:
         return ApiErrorModel(
-            errMessage: ResponseMessage.NO_INTERNET_CONNECTION);
-      /* case DataSource.DEFAULT:
-        return ApiErrorModel(
-            code: ResponseCode.DEFAULT, message: ResponseMessage.DEFAULT); */
+          error: Error(
+            message: ResponseMessage.NO_INTERNET_CONNECTION,
+          ),
+        );
       case DataSource.DEFAULT:
         return ApiErrorModel(
-            errMessage: ResponseMessage.NO_INTERNET_CONNECTION);
+          error: Error(
+            message: ResponseMessage.DEFAULT,
+          ),
+        );
     }
   }
 }
+
 
 class ErrorHandler implements Exception {
   late ApiErrorModel apiErrorModel;
