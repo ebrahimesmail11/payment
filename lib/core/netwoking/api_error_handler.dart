@@ -62,6 +62,7 @@ class ResponseMessage {
   static String NO_INTERNET_CONNECTION = ApiErrors.noInternetError;
   static String DEFAULT = ApiErrors.defaultError;
 }
+
 extension DataSourceExtension on DataSource {
   ApiErrorModel getFailure() {
     switch (this) {
@@ -146,7 +147,6 @@ extension DataSourceExtension on DataSource {
     }
   }
 }
-
 
 class ErrorHandler implements Exception {
   late ApiErrorModel apiErrorModel;

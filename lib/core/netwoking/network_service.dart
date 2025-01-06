@@ -7,13 +7,14 @@ class NetworkService {
     required String url,
     required String token,
     String? contentType,
+    Map<String,String>? headers,
   }) {
     final response = dio.post(
       url,
       data: body,
       options: Options(
         contentType: contentType,
-        headers: {'Authorization': 'Bearer $token'},
+        headers: headers?? {'Authorization': 'Bearer $token'},
       ),
     );
     return response;

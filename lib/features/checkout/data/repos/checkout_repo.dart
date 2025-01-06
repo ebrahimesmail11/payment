@@ -9,11 +9,13 @@ class CheckoutRepo {
   Future<ApiResult<void>> makePayment(
       {required PaymentIntentInputModel paymentIntentInputModel}) async {
     try {
-       await _apiService.makePayment(
+      await _apiService.makePayment(
           paymentIntentInputModel: paymentIntentInputModel);
       return ApiResult.success(null);
     } catch (e) {
-      return ApiResult.failure(ErrorHandler.handle(e),);
+      return ApiResult.failure(
+        ErrorHandler.handle(e),
+      );
     }
   }
 }

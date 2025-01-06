@@ -1,7 +1,10 @@
 class AppConstant {
-  static const String baseUrl='https://api.stripe.com';
-  static const String url='$baseUrl/v1/payment_intents';
+  static const String baseUrl = 'https://api.stripe.com';
+  static const String url = '$baseUrl/v1/payment_intents';
+  static const String ephemeralKeyModel = '$baseUrl/v1/ephemeral_keys';
+
 }
+
 class ApiErrors {
   static const String badRequestError = "badRequestError";
   static const String noContent = "noContent";

@@ -35,8 +35,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
         );
       },
       builder: (context, state) {
-        return state.maybeWhen(
-          loading: () {
+        return state.maybeWhen(loading: () {
           return Container(
             width: 350.w,
             height: 73.h,
@@ -51,14 +50,19 @@ class CustomButtonBlocConsumer extends StatelessWidget {
               color: Colors.white,
             ),
           );
-       }, 
-        orElse: () {
+        }, orElse: () {
           return AppTextButton(
             buttonText: 'Continue',
             textStyle: Styles.style22,
-            onPressed: ()async {
-              PaymentIntentInputModel paymentIntentInputModel=PaymentIntentInputModel(amount: '100',currency: 'USD');
-             await context.read<PaymentCubit>().makePayment(paymentIntentInputModel: paymentIntentInputModel);
+            onPressed: () async {
+              PaymentIntentInputModel paymentIntentInputModel =
+                  PaymentIntentInputModel(
+                amount: '100',
+                currency: 'USD',
+                customerId: 'cus_RXLMCvILpTIqMB',
+              );
+              await context.read<PaymentCubit>().makePayment(
+                  paymentIntentInputModel: paymentIntentInputModel);
             },
           );
         });

@@ -11,7 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       leading: leading ??
-           Center(
+          Center(
               child: SvgPicture.asset(
             'assets/images/arrow.svg',
             height: 24.h,
@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       backgroundColor: Colors.transparent,
       elevation: 0,
-      title:  Text(
+      title: Text(
         title ?? '',
         style: Styles.style25,
       ),
