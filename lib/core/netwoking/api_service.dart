@@ -54,8 +54,8 @@ class ApiService {
     var paymentIntentModel = await createPaymentIntent(
       paymentIntentInputModel: paymentIntentInputModel,
     );
-    var ephemeralKeyModel =
-        await createEphemeralKey(customerId: paymentIntentInputModel.customerId);
+    var ephemeralKeyModel = await createEphemeralKey(
+        customerId: paymentIntentInputModel.customerId);
 
     InitPaymentSheetInputModel initPaymentSheetInputModel =
         InitPaymentSheetInputModel(
