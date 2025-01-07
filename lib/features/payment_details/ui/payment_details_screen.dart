@@ -7,7 +7,6 @@ import 'package:payment/core/theming/styles.dart';
 import 'package:payment/core/widgets/app_text_button.dart';
 import 'package:payment/core/widgets/custom_app_bar.dart';
 import 'package:payment/features/payment_details/ui/widgets/custom_credit_card.dart';
-import 'package:payment/features/payment_details/ui/widgets/payment_methods_list_view.dart';
 
 class PaymentDetailsScreen extends StatefulWidget {
   const PaymentDetailsScreen({super.key});
@@ -40,9 +39,9 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: CustomScrollView(
           slivers: [
-            SliverToBoxAdapter(
-              child: const PaymentMethodsListView(),
-            ),
+            // SliverToBoxAdapter(
+            //   child: const PaymentMethodsListView(),
+            // ),
             SliverToBoxAdapter(
               child: CustomCreditCard(
                 autovalidateMode: autovalidateMode,

@@ -14,12 +14,14 @@ import 'package:payment/features/checkout/data/model/amount_model/amount_model.d
 import 'package:payment/features/checkout/data/model/amount_model/details.dart';
 import 'package:payment/features/checkout/data/model/items_list_model/item.dart';
 import 'package:payment/features/checkout/data/model/items_list_model/items_list_model.dart';
+import 'package:payment/features/checkout/data/model/payment_intent_input_model/payment_intent_input_model.dart';
 
 class CustomButtonBlocConsumer extends StatelessWidget {
   const CustomButtonBlocConsumer({
     super.key,
+    required this.isPaypal,
   });
-
+  final bool isPaypal;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<PaymentCubit, PaymentState>(
@@ -62,17 +64,20 @@ class CustomButtonBlocConsumer extends StatelessWidget {
             buttonText: 'Continue',
             textStyle: Styles.style22,
             onPressed: () async {
-              exceuetePaypalPayment(
-                context,
-              );
-              // PaymentIntentInputModel paymentIntentInputModel =
-              //     PaymentIntentInputModel(
-              //   amount: '100',
-              //   currency: 'USD',
-              //   customerId: 'cus_RXLMCvILpTIqMB',
-              // );
-              // await context.read<PaymentCubit>().makePayment(
-              //     paymentIntentInputModel: paymentIntentInputModel);
+              if (isPaypal) {
+                exceuetePaypalPayment(
+                  context,
+                );
+              } else {
+                PaymentIntentInputModel paymentIntentInputModel =
+                    PaymentIntentInputModel(
+                  amount: '100',
+                  currency: 'USD',
+                  customerId: 'cus_RXLMCvILpTIqMB',
+                );
+                await context.read<PaymentCubit>().makePayment(
+                    paymentIntentInputModel: paymentIntentInputModel);
+              }
             },
           );
         });
@@ -96,9 +101,9 @@ class CustomButtonBlocConsumer extends StatelessWidget {
             "description": "The payment transaction description.",
             "item_list": {
               //'items':
-            //      transactions.itemsList.toJson(),
-              "items": transactions.itemsList.items!
-                  .map((e)=>e.toJson()).toList(),
+              //      transactions.itemsList.toJson(),
+              "items":
+                  transactions.itemsList.items!.map((e) => e.toJson()).toList(),
             }
           }
         ],
@@ -128,7 +133,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
         shippingDiscount: 0,
       ),
     );
-    List<OrderItem> orders =[
+    List<OrderItem> orders = [
       OrderItem(
         name: 'Apple',
         quantity: 4,
